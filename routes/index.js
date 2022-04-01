@@ -11,7 +11,7 @@ const pool = new Pool({
 
 /* GET home page. */
 router
-.get('/', function(req, res, next) {
+.get('/', async function(req, res, next) {
   try {
     const client = await pool.connect();
     const result = await client.query('SELECT * FROM test');
